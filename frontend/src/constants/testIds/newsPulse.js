@@ -1,0 +1,18 @@
+export const NEWS_PULSE = {
+  appTitle: "news-pulse-app-title",
+  triggerPipelineBtn: "trigger-pipeline-btn",
+  liveBadge: "live-status-badge",
+  ticker: "news-ticker",
+  timelineConsole: "active-topic-tracks-console",
+  topicTrackPrefix: "topic-track-",
+  trackBarPrefix: "track-bar-",
+  trackLabelPrefix: "track-label-",
+  archiveExplorer: "grid-archive-explorer",
+  returnToIndexBtn: "return-to-index-btn",
+  articleCardPrefix: "article-card-",
+  articleImagePrefix: "article-image-",
+  articleLinkPrefix: "article-link-",
+  loadingState: "news-loading-state",
+  errorState: "news-error-state",
+  emptyState: "news-empty-state",
+};
