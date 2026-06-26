@@ -10,6 +10,7 @@ import NewsTicker from "./components/news/NewsTicker";
 import EditorialFooter from "./components/news/EditorialFooter";
 import { NEWS_PULSE } from "./constants/testIds/newsPulse";
 
+// Dynamic API fallback integration for production matching local endpoints
 const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 const NewsPulseApp = () => {
@@ -54,7 +55,6 @@ const NewsPulseApp = () => {
     [topics, activeTopicId]
   );
 
-  // Auto-scrolling anchor down to dispatches layout stream
   const handleSelectTopic = useCallback((topic) => {
     setActiveTopicId(topic.id);
     fetchArticles(topic.id);
@@ -64,10 +64,9 @@ const NewsPulseApp = () => {
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 120); // Minor latency padding lets the DOM mount completely before jumping
+    }, 120); 
   }, [fetchArticles]);
 
-  // Auto-scrolling toggle returning back up to primary index console rows
   const handleBackToIndex = useCallback(() => {
     setActiveTopicId(null);
     setArticles([]);
@@ -94,7 +93,7 @@ const NewsPulseApp = () => {
     }
   }, [fetchTopics]);
 
-  const totalArticles = useMemo(() => topics.reduce((s, t) => s + t.article_count, 0), [topics]);
+  const totalArticles = useMemo(() => topics.reduce((s, t) => s + (t.article_count || 0), 0), [topics]);
 
   return (
     <div className="min-h-screen bg-white">
