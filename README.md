@@ -1,6 +1,7 @@
 # NEWS PULSE: Executive Topic Tracking Pipeline
 
 A full-stack editorial terminal that automatically scrapes global news feeds, groups them into coherent topic clusters, and exposes them via a high-performance brutalist dashboard. Powered by a self-hosted pipeline and a loosely coupled Mongoose data layer.
+visit the website throung https://news-pulse-rho.vercel.app and click the TRIGGER PIPELINE BUTTON AT THE TOP for new and latest wires of news ENJOY your exprince with news pluse 
 
 ---
 
